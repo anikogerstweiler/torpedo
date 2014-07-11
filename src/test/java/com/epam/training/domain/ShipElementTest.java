@@ -1,24 +1,25 @@
 package com.epam.training.domain;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 
 public class ShipElementTest {
 
-	@Before
-	public void setUp() throws Exception {
-	}
-
-	@After
-	public void tearDown() throws Exception {
-	}
-
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void testConstructor() {
+		//given
+		int actualX = 0;
+		int actualY = 0;
+		ShipElement element = new ShipElement(actualX, actualY);
+		
+		//when
+		int expectedX = element.getRelativePositionX();
+		int expectedY = element.getRelativePositionY();
+		
+		//then
+		assertEquals(expectedX, actualX);
+		assertEquals(expectedY, actualY);
 	}
 
 }

@@ -9,6 +9,7 @@ public enum ShipType {
 		public List<ShipElement> createShip(int positionX, int positonY) {
 			List<ShipElement> elements = new ArrayList<>();
 			elements.add(new ShipElement(positionX, positonY));
+			
 			return elements;
 		}
 	},
@@ -18,6 +19,7 @@ public enum ShipType {
 			List<ShipElement> elements = new ArrayList<>();
 			elements.add(new ShipElement(positionX, positonY));
 			elements.add(new ShipElement(positionX + 1, positonY));
+			
 			return elements;
 		}
 	},
@@ -28,6 +30,7 @@ public enum ShipType {
 			elements.add(new ShipElement(positionX, positonY));
 			elements.add(new ShipElement(positionX + 1, positonY));
 			elements.add(new ShipElement(positionX + 2, positonY));
+			
 			return elements;
 		}
 	},
@@ -39,6 +42,7 @@ public enum ShipType {
 			elements.add(new ShipElement(positionX + 1, positonY));
 			elements.add(new ShipElement(positionX + 2, positonY));
 			elements.add(new ShipElement(positionX + 3, positonY));
+			
 			return elements;
 		}
 	},
@@ -50,6 +54,7 @@ public enum ShipType {
 			elements.add(new ShipElement(positionX, positonY + 1));
 			elements.add(new ShipElement(positionX + 1, positonY + 1));
 			elements.add(new ShipElement(positionX + 2, positonY + 1));
+			
 			return elements;
 		}
 	};
