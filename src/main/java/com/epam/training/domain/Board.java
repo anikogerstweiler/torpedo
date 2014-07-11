@@ -28,12 +28,7 @@ public class Board {
 		boolean isPlacedOnBoard = false;
 
 		Ship ship = null;
-		int safetyCounter = 0;
 		while(!isPlacedOnBoard) {
-			if (safetyCounter++ == 10) {
-				throw new IllegalStateException("Ship placement failed!");
-			}
-
 			int positionX = random.nextInt(size);
 			int positionY = random.nextInt(size);
 			ship = createShip(shipType, positionX, positionY);
@@ -64,9 +59,16 @@ public class Board {
 
 	private boolean isOnBoard(Ship ship) {
 		ShipElement lastElement = ship.getLastElement();
-		boolean isHorizontalGood = 0 <= lastElement.getRelativePositionX() && lastElement.getRelativePositionX() < size;
-		boolean isVerticalGood = 0 <= lastElement.getRelativePositionY() && lastElement.getRelativePositionY() < size;
-		return isHorizontalGood && isVerticalGood;
+		
+		return isHorizontalOnBoard(lastElement) && isVerticalOnBoard(lastElement);
+	}
+
+	private boolean isVerticalOnBoard(ShipElement lastElement) {
+		return 0 <= lastElement.getRelativePositionY() && lastElement.getRelativePositionY() < size;
+	}
+
+	private boolean isHorizontalOnBoard(ShipElement lastElement) {
+		return 0 <= lastElement.getRelativePositionX() && lastElement.getRelativePositionX() < size;
 	}
 
 	public int getSize() {
