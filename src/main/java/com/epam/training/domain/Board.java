@@ -9,13 +9,13 @@ public class Board {
 
 	private final int size;
 
-	private final List<Ship> ships;
+	private final List<Ship> shipList;
 
 	private final Random random = new Random();
 
 	public Board(final int size) {
 		this.size = size;
-		ships = new ArrayList<>();
+		shipList = new ArrayList<>();
 	}
 
 	public void createShips(ShipType shipType, int piece) {
@@ -40,12 +40,12 @@ public class Board {
 			}
 		}
 
-		ships.add(ship);
+		shipList.add(ship);
 	}
 
 	private boolean isShipAtTheSamePosition(Ship ship) {
-		for (int i = 0; i < ships.size(); i++) {
-			if (ship.isOverLap(ships.get(i))) {
+		for (int i = 0; i < shipList.size(); i++) {
+			if (ship.isOverLap(shipList.get(i))) {
 				return true;
 			}
 		}
@@ -76,6 +76,6 @@ public class Board {
 	}
 
 	public List<Ship> getShips() {
-		return Collections.unmodifiableList(ships);
+		return Collections.unmodifiableList(shipList);
 	}
 }

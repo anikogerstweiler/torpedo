@@ -2,10 +2,10 @@ package com.epam.training.domain;
 
 import java.util.List;
 
-public class Engine {
+public class ShooterEngine {
 	private Board board;
 
-	public Engine(Board board) {
+	public ShooterEngine(Board board) {
 		this.board = board;
 	}
 

@@ -1,7 +1,7 @@
 package com.epam.training;
 
 import com.epam.training.domain.Board;
-import com.epam.training.domain.Engine;
+import com.epam.training.domain.ShooterEngine;
 import com.epam.training.domain.ShipType;
 
 public class Torpedo {
@@ -10,7 +10,7 @@ public class Torpedo {
 
 		initShips(board);
 
-		Engine engine = new Engine(board);
+		ShooterEngine engine = new ShooterEngine(board);
 
 		engine.printShipsOnBoard();
 
